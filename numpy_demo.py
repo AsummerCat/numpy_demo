@@ -46,22 +46,87 @@ def create_numpy():
     f = np.empty((2, 3))  # 创建2行3列空矩阵，矩阵中元素初始值随机，取决于内存状态，默认情况下，创建的数组的dtype为float64
     g = np.arange(6)
     h = np.arange(10, 30, 5)
-    print(type(h))
-    print(h)
+    i = np.full((4, 3), 7)  # 创建4行3列元素都是7的矩阵
+    j = np.eye(3)  # 创建3行3列的单位矩阵
+    print(type(j))
+    print(j)
 
 
 '''
 数学计算增删改查
 '''
+
+
 def calculate_numpy():
-    pass
+    a = np.array([[1, 2], [3, 4]])
+    b = np.array([[5, 6], [7, 8]])
+    print(a)
+    # a+b
+    print("a+b对应位置相加\n", a + b)
+    # a-b
+    print("a-b对应位置相减\n", a - b)
+    # a*b
+    print("a*b 相乘\n", a * b)
+    # a/b
+    print("a/b 相除\n", a / b)
+    # 对数组a开平方
+    print("a对应位置开平方\n", np.sqrt(a))
+    # 矩阵点乘
+    print("矩阵点乘\n", a.dot(b))
+    # 矩阵点乘
+    print("矩阵点乘\n", np.dot(a, b))
+    # 最大值
+    print("最大值\n", a.max())
+    # 最小
+    print("最小值\n", a.min())
+    # 求和
+    print("求和\n", a.sum())
+
+
+'''
+常用函数
+'''
+
+
+def common_use():
+    a = np.array([[1, 2], [3, 4], [5, 6]])
+    print(a)
+    print("==================函数sum有相求和功能==================")
+    # 将数组a中所有元素的总和
+    print("将数组a中所有元素的总和", np.sum(a))
+    # 将数组a中行与列进行求和
+    print("将数组a中行与列进行求和", np.sum(a, axis=0))
+    # 将数组a中行与行进行求和
+    print("将数组a中行与行进行求和", np.sum(a, axis=1))
+
+    print("==================函数sum有相求和功能==================")
+    # 求数组a中所有元素的平均值
+    print("求数组a中所有元素的平均值", np.mean(a))
+    # 求数组a中行与列的平均值
+    print("将数组a中行与列进行求和", np.mean(a, axis=0))
+    # 求数组a中行与行的平均值
+    print("将数组a中行与行进行求和", np.mean(a, axis=1))
+
+    print("========函数uniform有产生指定范围数值的功能================")
+
+    # 在1-4之间随机产生指定范围数值的功能
+    print("在1-4之间随机产生指定范围数值的功能", np.random.uniform(1, 4))
+
+    print("========函数tile有产生指定范围数值的功能================")
+
+    print("在横向为2增加一个数组a,纵向1不增加", np.tile(a, (2, 1)))
+    print("在横向为3增加2个数组a,纵向2增加1个数组", np.tile(a, (3, 2)))
+
+    print("=========================================================")
 
 
 if __name__ == '__main__':
     # 测试语句
-    test()
+    # test()
     # 创建数组
-    create_numpy()
-    # 科学技术计算学习
+    # create_numpy()
+    # 科学计算
     calculate_numpy()
-
+    # 常用函数
+    # common_use()
+    pass
